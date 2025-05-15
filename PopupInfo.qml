@@ -29,47 +29,54 @@ Popup {
     modal: true
     focus: true
 
-    Column {
-        id: columnInfo
-        width: parent.width
-        anchors.horizontalCenter: parent.horizontalCenter
-        spacing: 10
+    ScrollView {
+        anchors.fill: parent
+        wheelEnabled: true
+        clip: true
 
-        Text {
-            text: "Laser Tunning Software (LTS) v1.12"
-            font.bold: true
-            width: parent.width
-        }
+        Column {
+            id: columnInfo
+            width: popupInfo.width
+            height: popupInfo.height
+            anchors.horizontalCenter: parent.horizontalCenter
+            spacing: 10
 
-        Text {
-            text: "LTS is an open-source application that helps users control laser via serial commands."
-            wrapMode: Text.Wrap
-            width: parent.width
-        }
+            Text {
+                text: "Laser Tunning Software (LTS)"
+                font.bold: true
+                width: parent.width
+            }
 
-        Text {
-            text: "License Information:"
-            font.bold: true
-            width: parent.width
-        }
+            Text {
+                text: "LTS is an open-source application that helps users control laser via serial commands."
+                wrapMode: Text.Wrap
+                width: parent.width
+            }
 
-        TextArea {
-            text: "This application is licensed under the GNU General Public License v3.0 (GPLv3). You are free to use, modify, and distribute this software under the terms of this license.\n\nFor the full text of the license, please visit the GNU GPLv3 website: https://www.gnu.org/licenses/gpl-3.0.html."
-            readOnly: true
-            wrapMode: Text.Wrap
-            width: parent.width
-        }
+            Text {
+                text: "License Information:"
+                font.bold: true
+                width: parent.width
+            }
 
-        Text {
-            text: "Source Code Availability:"
-            font.bold: true
-            width: parent.width
-        }
+            TextArea {
+                text: "This application is licensed under the GNU General Public License v3.0 (GPLv3). You are free to use, modify, and distribute this software under the terms of this license.\n\nFor the full text of the license, please visit the GNU GPLv3 website: https://www.gnu.org/licenses/gpl-3.0.html."
+                readOnly: true
+                wrapMode: Text.Wrap
+                width: parent.width
+            }
 
-        Text {
-            text: "The source code for this application is available on GitHub: https://github.com/insigma-opensource/LTS"
-            wrapMode: Text.Wrap
-            width: parent.width
+            Text {
+                text: "Source Code Availability:"
+                font.bold: true
+                width: parent.width
+            }
+
+            Text {
+                text: "The source code for this application is available on GitHub: https://github.com/insigma-opensource/LTS"
+                wrapMode: Text.Wrap
+                width: parent.width
+            }
         }
     }
 }
