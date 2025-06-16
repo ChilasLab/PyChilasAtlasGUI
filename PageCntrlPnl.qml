@@ -108,14 +108,14 @@ Pane {
                             Timer {
                                 id: timerAh
                                 interval: 1; running: false; repeat: true
-                                property int offset: 30
+                                property int offset: 20
                                 onTriggered: {
                                     gaugeHeater1.value = backend.drvD(parseInt(textIHS1.text), ((sliderHeater1.value**2 + offset)**0.5).toFixed(4)).slice(2)
                                     
                                     if (interval == 20){
                                         stop()
                                         interval = 1
-                                        offset = 30
+                                        offset = 20
                                     }else{
                                         offset = 0
                                         interval = 20
