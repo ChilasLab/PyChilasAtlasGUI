@@ -1,6 +1,6 @@
-# LTS
+# Chilas ATLAS 
 
-Laser Tunning Software
+Chilas ATLAS is an open-source Graphical User Interface that enables laser control through serial commands.
 
 ## Table of Contents
 
@@ -38,6 +38,8 @@ CT3-2022-V1.12
 └── CT3-2022-V1.13T-INT
     └── CT3-2022-V1.14-INT
         └── CT3-2022-V1.14
+            └── CT3-2025-V1.14
+                └── ATLAS-2025-V1.15
 ```
 ```
 CT3-2022-V1.11~
@@ -54,5 +56,5 @@ CF3-2022-V1.8
 ## Deployment
 Example code to make one file executable.
 ```
-pyinstaller --name "CT3-2022-V1.12" --windowed --onefile --add-data "Control.qml;." --add-data "chilas.png;." --icon "icon.ico" --add-data "icon.ico;." --add-data "main.qml;." --add-data "PageCntrlPnl.qml;." --add-data "PageScan.qml;." --add-data "PopupInfo.qml;." --add-data "Splash.qml;." --add-data "LICENSE;." main.py
+pyinstaller --name "ATLAS-2025-V1.15" --windowed --onefile --add-data "Control.qml;." --add-data "chilas.png;." --icon "icon.ico" --add-data "icon.ico;." --add-data "main.qml;." --add-data "PageCntrlPnl.qml;." --add-data "PageScan.qml;." --add-data "PopupInfo.qml;." --add-data "Splash.qml;." --add-data "LICENSE;." main.py
 ```
