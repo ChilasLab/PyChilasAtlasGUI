@@ -42,13 +42,13 @@ Popup {
             spacing: 10
 
             Text {
-                text: "Laser Tunning Software (LTS)"
+                text: "Chilas ATLAS"
                 font.bold: true
                 width: parent.width
             }
 
             Text {
-                text: "LTS is an open-source application that helps users control laser via serial commands."
+                text: "Chilas ATLAS is an open-source application that helps users control laser via serial commands."
                 wrapMode: Text.Wrap
                 width: parent.width
             }
@@ -73,7 +73,7 @@ Popup {
             }
 
             Text {
-                text: "The source code for this application is available on GitHub: https://github.com/insigma-opensource/LTS"
+                text: "The source code for this application is available on GitHub: https://github.com/ChilasLab/PyChilasAtlasGUI"
                 wrapMode: Text.Wrap
                 width: parent.width
             }

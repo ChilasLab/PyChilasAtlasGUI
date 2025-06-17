@@ -1,11 +1,11 @@
 """
-Script to create a standalone binary executable for the LTS application.
+Script to create a standalone binary executable for the Chilas ATLAS application.
 """
 
 import PyInstaller.__main__
 from PyInstaller.utils.hooks import copy_metadata, collect_submodules
 from PyInstaller.utils.hooks import collect_data_files
-from PySide6.QtWidgets import QApplication,QFileDialog
+from PySide2.QtWidgets import QApplication,QFileDialog
 import os
 import shutil
 import sys

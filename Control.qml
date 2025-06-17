@@ -1,12 +1,12 @@
 /****************************************************************************
-This file is part of LTS.
+This file is part of Chilas ATLAS.
 
-LTS is free software: you can redistribute it and/or modify
+Chilas ATLAS is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
 the Free Software Foundation, either version 3 of the License, or
 (at your option) any later version.
 
-LTS is distributed in the hope that it will be useful,
+Chilas ATLAS is distributed in the hope that it will be useful,
 but WITHOUT ANY WARRANTY; without even the implied warranty of
 MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 GNU General Public License for more details.
@@ -26,7 +26,7 @@ Window {
     minimumWidth: 305
     height: 540
     minimumHeight: 200
-    title: "CT3-2025-V1.14"
+    title: "Chilas ATLAS-2025-V1.15"
     // @disable-check M16
     onClosing: {
         backend.systStat(0)
