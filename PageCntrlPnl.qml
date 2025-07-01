@@ -876,7 +876,7 @@ Pane {
                             antialiasing: true
                             stepSize: 0.01
                             wheelEnabled: true
-                            value: 21
+                            value: 25
                             orientation: Qt.Vertical
                             to: 30
                             from: 15
