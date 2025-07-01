@@ -128,6 +128,7 @@ Pane {
                     Switch {
                         id: switchAh
                         text: "Anti-Hyst."
+                        checked: true
                         anchors.horizontalCenter: parent.horizontalCenter
                     }
 
