@@ -1266,27 +1266,6 @@ Pane {
                     }
 
                     Row {
-                        id: rowSwStat1
-                        StatusIndicator {
-                            id: statusIndicator1
-                            anchors.verticalCenter: parent.verticalCenter
-                            anchors.bottom: parent.bottom
-                            active: switch2.checked
-                        }
-
-                        Switch {
-                            id: switch2
-                            text: qsTr("Current")
-                            anchors.verticalCenter: parent.verticalCenter
-                            onToggled: {
-                                backend.lsrStat(checked+0)
-                                button2.clicked()
-                            }
-                        }
-                    }
-
-
-                    Row {
                         id: rowSwStat2
                         StatusIndicator {
                             id: statusIndicator2
