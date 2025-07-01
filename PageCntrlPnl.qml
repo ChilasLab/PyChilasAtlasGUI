@@ -59,7 +59,7 @@ Pane {
 
                         Text {
                             id: textHeaderHeater1
-                            text: "Phase "
+                            text: "Cavity Phase "
                             font.pixelSize: 18
                         }
 
@@ -107,18 +107,17 @@ Pane {
 
                             Timer {
                                 id: timerAh
-                                interval: 1; running: false; repeat: true
+                                interval: 1
+                                running: false
+                                repeat: true
+                                property int t_coun: 0
                                 property int offset: 20
                                 onTriggered: {
-                                    gaugeHeater1.value = backend.drvD(parseInt(textIHS1.text), ((sliderHeater1.value**2 + offset)**0.5).toFixed(4)).slice(2)
-                                    
-                                    if (interval == 20){
+                                    gaugeHeater1.value = backend.drvD(parseInt(textIHS1.text), ((sliderHeater1.value**2+(offset-2*t_coun))**0.5).toFixed(4)).slice(2)
+                                    t_coun++
+                                    if(t_coun > 10) {
                                         stop()
-                                        interval = 1
-                                        offset = 20
-                                    }else{
-                                        offset = 0
-                                        interval = 20
+                                        t_coun = 0
                                     }
                                 }
                             }
@@ -798,7 +797,7 @@ Pane {
 
                         Text {
                             id: textHeaderTec
-                            text: "TEC"
+                            text: "Temperature"
                             font.pixelSize: 18
                         }
 
@@ -936,7 +935,7 @@ Pane {
                     anchors.fill: parent
                     Text {
                         id: textCurrent
-                        text: "Current"
+                        text: "SOA Current"
                         font.pixelSize: 18
                         anchors.horizontalCenter: parent.horizontalCenter
                     }
@@ -1057,7 +1056,7 @@ Pane {
 
                         Text {
                             id: textHeaderPd0
-                            text: "PD "
+                            text: "Photodiode "
                             font.pixelSize: 18
                         }
 
@@ -1147,7 +1146,7 @@ Pane {
 
                         Text {
                             id: textHeaderPd1
-                            text: "PD "
+                            text: "Photodiode "
                             font.pixelSize: 18
                         }
 
@@ -1288,7 +1287,7 @@ Pane {
                     ComboBox {
                         id: comboBox
                         width: parent.width
-                        model: ["Select COM"]
+                        model: ["Select COM Port"]
                         popup.onVisibleChanged: {
                             if(popup.visible) {
                                 model = backend.listPorts()
@@ -1344,14 +1343,14 @@ Pane {
                     Button {
                         id: button
                         width: parent.width
-                        text: qsTr("Load Settings")
+                        text: qsTr("Load Calibration File")
                         enabled: true
                         onClicked: fileDialog.open()
                     }
 
                     FileDialog {
                         id: fileDialog
-                        title: "Please choose a settings file"
+                        title: "Please choose a calibration file"
                         folder: shortcuts.home
                         nameFilters: [ "Text files (*.txt *.csv)", "All files (*)" ]
 
