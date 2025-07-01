@@ -484,7 +484,7 @@ Pane {
 
                     Row {
                         id: rowHeater4
-                        height: columnHeater1.height - textHeaderHeater1.height - colSetGetHeater1.height - switchAh.height - 3*columnHeater1.spacing
+                        height: columnHeater4.height - textHeaderHeater4.height - colSetGetHeater4.height - 2*columnHeater4.spacing
                         anchors.horizontalCenter: parent.horizontalCenter
 
                         Gauge {
@@ -510,36 +510,9 @@ Pane {
                             value: 0
 
                             onValueChanged: {
-                                if (switchAh2.checked) {
-                                    timerAh2.restart()
-                                }
                                 gaugeHeater4.value = backend.drvD(parseInt(textIHS4.text), value.toFixed(4)).slice(2)
                             }
-
-                            Timer {
-                                id: timerAh2
-                                interval: 1; running: false; repeat: true
-                                property int offset: 30
-                                onTriggered: {
-                                    gaugeHeater4.value = backend.drvD(parseInt(textIHS4.text), ((sliderHeater4.value**2 + offset)**0.5).toFixed(4)).slice(2)
-                                    
-                                    if (interval == 20){
-                                        stop()
-                                        interval = 1
-                                        offset = 30
-                                    }else{
-                                        offset = 0
-                                        interval = 20
-                                    }
-                                }
-                            }
                         }
-                    }
-
-                    Switch {
-                        id: switchAh2
-                        text: "Anti-Hyst."
-                        anchors.horizontalCenter: parent.horizontalCenter
                     }
 
                     Column {
