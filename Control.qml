@@ -23,10 +23,12 @@ import QtQuick.Extras 1.4
 Window {
     id: window
     width: 1753
-    minimumWidth: 305
+    minimumWidth: 1753
+    maximumWidth: 1753
     height: 540
-    minimumHeight: 200
-    title: "Chilas ATLAS-2025-V1.15"
+    minimumHeight: 540
+    maximumHeight: 540
+    title: "Chilas ATLAS-2025-V1.16"
     // @disable-check M16
     onClosing: {
         backend.systStat(0)
@@ -47,7 +49,7 @@ Window {
 
         TabButton {
             id: cntrlPnl
-            text: "Control Panel"
+            text: "Chilas ATLAS"
         }
     }
 
