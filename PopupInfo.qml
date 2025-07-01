@@ -48,7 +48,7 @@ Popup {
             }
 
             Text {
-                text: "Chilas ATLAS is an open-source application that helps users control laser via serial commands."
+                text: "Chilas ATLAS is an open-source application for control of a Chilas ATLAS laser."
                 wrapMode: Text.Wrap
                 width: parent.width
             }
