@@ -26,8 +26,11 @@ import pyLaser
 
 if __name__ == "__main__":
     app = QGuiApplication(sys.argv)
-    app.setOrganizationName("RA")
-    app.setWindowIcon(QIcon("icon.ico"))
+    app.setApplicationName("Chilas Atlas")
+    app.setApplicationVersion("2025-v1.16")
+    app.setOrganizationName("Chilas Lasers B.V.")
+    app.setOrganizationDomain("chilasbv.com")
+    app.setWindowIcon(QIcon("star.ico"))
 
     engine = QQmlApplicationEngine()
 

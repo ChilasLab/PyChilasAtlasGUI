@@ -29,12 +29,12 @@ PyInstaller.__main__.run([
     'main.py',
     '--onefile',
     '--windowed',
-    '-iicon.ico',
+    '--icon=star.ico',
     f"-n{name}",
     '--add-data',
       "*.qml;.",
     '--add-data',
-      "*.png;."
+      "chilas.png;."
 ])
 
 source: str = os.path.join("dist", f"{name}")
