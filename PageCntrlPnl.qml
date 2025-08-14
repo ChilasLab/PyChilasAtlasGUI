@@ -110,14 +110,17 @@ Pane {
                                 interval: 1
                                 running: false
                                 repeat: true
-                                property int t_coun: 0
-                                property int offset: 20
+                                property int offset: 35
                                 onTriggered: {
-                                    gaugeHeater1.value = backend.drvD(parseInt(textIHS1.text), ((sliderHeater1.value**2+(offset-2*t_coun))**0.5).toFixed(4)).slice(2)
-                                    t_coun++
-                                    if(t_coun > 10) {
+                                    gaugeHeater1.value = backend.drvD(parseInt(textIHS1.text), ((sliderHeater1.value**2 + offset)**0.5).toFixed(4)).slice(2)
+                                    if (interval == 10){
                                         stop()
-                                        t_coun = 0
+                                        offset = 35
+                                        interval = 1
+                                    }
+                                    else{
+                                        offset = 0
+                                        interval = 10
                                     }
                                 }
                             }
