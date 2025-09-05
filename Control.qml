@@ -28,7 +28,7 @@ Window {
     height: 540
     minimumHeight: 540
     maximumHeight: 540
-    title: "Chilas ATLAS-2025-V1.17"
+    title: "Chilas ATLAS685-2025-V1.18"
     // @disable-check M16
     onClosing: {
         backend.systStat(0)
@@ -49,7 +49,7 @@ Window {
 
         TabButton {
             id: cntrlPnl
-            text: "Chilas ATLAS"
+            text: "Chilas ATLAS 685"
         }
     }
 

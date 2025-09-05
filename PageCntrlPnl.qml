@@ -82,7 +82,7 @@ Pane {
                             antialiasing: true
                             value: 0
                             minimumValue: 0
-                            maximumValue: 15
+                            maximumValue: 10
                             tickmarkStepSize: 1
                             minorTickmarkCount: 1
                             Behavior on value { NumberAnimation { duration: 100 } }
@@ -94,7 +94,7 @@ Pane {
                             antialiasing: true
                             wheelEnabled: true
                             stepSize: 0.0001
-                            to: 14.5
+                            to: 10.0
                             orientation: Qt.Vertical
                             value: 0
                             onValueChanged: {
@@ -110,12 +110,12 @@ Pane {
                                 interval: 1
                                 running: false
                                 repeat: true
-                                property int offset: 35
+                                property int offset: 5
                                 onTriggered: {
                                     gaugeHeater1.value = backend.drvD(parseInt(textIHS1.text), ((sliderHeater1.value**2 + offset)**0.5).toFixed(4)).slice(2)
                                     if (interval == 10){
                                         stop()
-                                        offset = 35
+                                        offset = 5
                                         interval = 1
                                     }
                                     else{
@@ -158,7 +158,7 @@ Pane {
                                 font.pixelSize: 18
                                 cursorVisible: true
                                 selectByMouse: true
-                                validator: DoubleValidator{ locale: ""; top: 14.5; bottom: 0;}
+                                validator: DoubleValidator{ locale: ""; top: 10.0; bottom: 0;}
                                 onAccepted: {
                                     sliderHeater1.value = text
                                 }
@@ -245,7 +245,7 @@ Pane {
                             minimumValue: 0
                             value: sliderHeater2.value
                             minorTickmarkCount: 1
-                            maximumValue: 15
+                            maximumValue: 10
                             Behavior on value { NumberAnimation { duration: 100 } }
                         }
 
@@ -257,7 +257,7 @@ Pane {
                             wheelEnabled: true
                             value: 0
                             orientation: Qt.Vertical
-                            to: 14.5
+                            to: 10.0
                             onValueChanged: {
                                 gaugeHeater2.value = backend.drvD(parseInt(textIHS2.text), value.toFixed(4)).slice(2)
                             }
@@ -284,7 +284,7 @@ Pane {
                                 text: sliderHeater2.value.toFixed(4)
                                 font.pixelSize: 18
                                 selectByMouse: true
-                                validator: DoubleValidator{ locale: ""; bottom: 0; top: 14.5;}
+                                validator: DoubleValidator{ locale: ""; bottom: 0; top: 10.0;}
                                 onAccepted: {
                                     sliderHeater2.value = text
                                 }
@@ -370,7 +370,7 @@ Pane {
                             minimumValue: 0
                             value: sliderHeater3.value
                             minorTickmarkCount: 1
-                            maximumValue: 15
+                            maximumValue: 10
                             Behavior on value { NumberAnimation { duration: 100 } }
                         }
 
@@ -382,7 +382,7 @@ Pane {
                             wheelEnabled: true
                             value: 0
                             orientation: Qt.Vertical
-                            to: 14.5
+                            to: 10.0
                             onValueChanged: {
                                 gaugeHeater3.value = backend.drvD(parseInt(textIHS3.text), value.toFixed(4)).slice(2)
                             }
@@ -409,7 +409,7 @@ Pane {
                                 text: sliderHeater3.value.toFixed(4)
                                 font.pixelSize: 18
                                 selectByMouse: true
-                                validator: DoubleValidator{ locale: ""; bottom: 0; top: 14.5;}
+                                validator: DoubleValidator{ locale: ""; bottom: 0; top: 10.0;}
                                 onAccepted: {
                                     sliderHeater3.value = text
                                 }
@@ -496,7 +496,7 @@ Pane {
                             antialiasing: true
                             value: 0
                             minimumValue: 0
-                            maximumValue: 15
+                            maximumValue: 10
                             tickmarkStepSize: 1
                             minorTickmarkCount: 1
                             Behavior on value { NumberAnimation { duration: 100 } }
@@ -508,7 +508,7 @@ Pane {
                             antialiasing: true
                             wheelEnabled: true
                             stepSize: 0.0001
-                            to: 14.5
+                            to: 10.0
                             orientation: Qt.Vertical
                             value: 0
 
@@ -542,7 +542,7 @@ Pane {
                                 font.pixelSize: 18
                                 cursorVisible: true
                                 selectByMouse: true
-                                validator: DoubleValidator{ locale: ""; top: 14.5; bottom: 0;}
+                                validator: DoubleValidator{ locale: ""; top: 10.0; bottom: 0;}
                                 onAccepted: {
                                     sliderHeater4.value = text
                                 }
@@ -619,8 +619,8 @@ Pane {
                             antialiasing: true
                             minorTickmarkCount: 3
                             value: 0
-                            maximumValue: 1600
-                            minimumValue: 1500
+                            maximumValue: 700
+                            minimumValue: 670
                             tickmarkStepSize: (maximumValue - minimumValue)/10
                             Behavior on value { NumberAnimation { duration: 100 } }
                             style: GaugeStyle {
@@ -652,9 +652,10 @@ Pane {
 
                                 textEditSetWl.text = config[4].toFixed(3)
 
-                                sliderHeater3.value === config[2] ? sliderHeater3.valueChanged() : sliderHeater3.value = config[2]
-                                sliderHeater2.value === config[1] ? sliderHeater2.valueChanged() : sliderHeater2.value = config[1]
+                                sliderCurrent.value === config[5] ? sliderCurrent.valueChanged() : sliderCurrent.value = config[5]
                                 sliderHeater4.value === config[3] ? sliderHeater4.valueChanged() : sliderHeater4.value = config[3]
+                                sliderHeater2.value === config[1] ? sliderHeater2.valueChanged() : sliderHeater2.value = config[1]
+                                sliderHeater3.value === config[2] ? sliderHeater3.valueChanged() : sliderHeater3.value = config[2]
                                 sliderHeater1.value === config[0] ? sliderHeater1.valueChanged() : sliderHeater1.value = config[0]
                             }
                         }
@@ -950,7 +951,7 @@ Pane {
                             id: gaugeCurrent
                             height: parent.height
                             antialiasing: true
-                            tickmarkStepSize: 50
+                            tickmarkStepSize: 10
                             minimumValue: 0
                             value: sliderCurrent.value
                             minorTickmarkCount: 3
@@ -966,7 +967,7 @@ Pane {
                             stepSize: 1
                             wheelEnabled: true
                             orientation: Qt.Vertical
-                            to: 300
+                            to: 90
                             onValueChanged: {
                                 gaugeCurrent.value = backend.lsrIlev(value.toFixed(2)).slice(2)
                             }
@@ -994,7 +995,7 @@ Pane {
                                 anchors.verticalCenter: parent.verticalCenter
                                 font.pixelSize: 18
                                 selectByMouse: true
-                                validator: DoubleValidator{ locale: ""; bottom: 0; top: 300;}
+                                validator: DoubleValidator{ locale: ""; bottom: 0; top: 90;}
                                 onAccepted: {
                                     sliderCurrent.value = text
                                 }

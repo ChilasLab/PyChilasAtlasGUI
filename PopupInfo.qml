@@ -73,7 +73,7 @@ Popup {
             }
 
             Text {
-                text: "The source code for this application is available on GitHub: https://github.com/ChilasLab/PyChilasAtlasGUI"
+                text: "The source code for this application is available on GitHub: https://github.com/ChilasLasers/PyChilasAtlasGUI"
                 wrapMode: Text.Wrap
                 width: parent.width
             }

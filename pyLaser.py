@@ -198,8 +198,8 @@ class pyLaser(QObject):
 
     @Slot(int, result=list)
     def setConfig(self, index):
-        print(float(self.settings[index, 0]), float(self.settings[index, 1]), float(self.settings[index, 2]), float(self.settings[index, 3]), float(self.settings[index, 4]))
-        return [float(self.settings[index, 0]), float(self.settings[index, 1]), float(self.settings[index, 2]), float(self.settings[index, 3]), float(self.settings[index, 4])]
+        print(float(self.settings[index, 0]), float(self.settings[index, 1]), float(self.settings[index, 2]), float(self.settings[index, 3]), float(self.settings[index, 4]), float(self.settings[index, 5]))
+        return [float(self.settings[index, 0]), float(self.settings[index, 1]), float(self.settings[index, 2]), float(self.settings[index, 3]), float(self.settings[index, 4]), float(self.settings[index, 5])]
 
     @Slot(float, result=int)
     def findWl(self, wl):
